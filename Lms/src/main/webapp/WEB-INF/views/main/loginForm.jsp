@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>LMS - Login</title>
+<title>Login</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -42,10 +41,10 @@
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
 									</div>
-									<form class="user" action="login.do" method="post">
+									<form class="user" action="login.do" method="POST">
 										<div class="form-group">
 											<input type="text" class="form-control form-control-user"
-												id="id" name="id" placeholder="Enter Email Address...">
+												id="id" name="id" placeholder="Enter id...">
 										</div>
 										<div class="form-group">
 											<input type="password" class="form-control form-control-user"
@@ -59,17 +58,9 @@
 													Me</label>
 											</div>
 										</div>
-										<input type="submit" class="btn btn-primary btn-user btn-block"> Login </a>
-										<!-- 로그인 -->
+										<input type="submit"
+											class="btn btn-primary btn-user btn-block"> Login
 									</form>
-									<hr>
-									<div class="text-center">
-										<a class="small" href="forgot-password.html">Forgot
-											Password?</a>
-									</div>
-									<div class="text-center">
-										<a class="small" href="register.html">Create an Account!</a>
-									</div>
 								</div>
 							</div>
 						</div>

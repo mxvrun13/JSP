@@ -13,18 +13,22 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel-body">
-			<form role="form" action="${pageContext.request.contextPath }/board/register" method="post">
+			<form role="form"
+				action="${pageContext.request.contextPath }/board/register"
+				method="post">
 				<div class="form-group">
 					<label>Title</label> <input class="form-control" name="title">
 				</div>
 				<div class="form-group">
-					<label>Text Area</label> <textarea class="form-control" rows="3" name="content"></textarea>
+					<label>Text Area</label>
+					<textarea class="form-control" rows="3" name="content"></textarea>
 				</div>
 				<div class="form-group">
-					<label>Writer</label> <input class="form-control" name="writer" value="${board.writer }">
+					<label>Writer</label> <input class="form-control" name="writer"
+						value="${board.writer }">
 				</div>
-				<button type="submit" class="btn btn-default">Submit Button</button>
-				<button type="reset" class="btn btn-default">Reset Button</button>
+				<button type="submit" class="btn btn-default">수정</button>
+				<button type="button" class="btn btn-default">삭제</button>
 			</form>
 		</div>
 	</div>

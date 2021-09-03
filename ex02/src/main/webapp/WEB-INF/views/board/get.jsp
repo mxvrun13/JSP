@@ -21,8 +21,8 @@
 				<div class="form-group">
 					<label>Writer</label> <input class="form-control" name="writer" value="${board.writer }">
 				</div>
-				<button type="submit" class="btn btn-default">Submit Button</button>
-				<button type="reset" class="btn btn-default">Reset Button</button>
+				<button type="submit" class="btn btn-default">수정</button>
+				<button type="submit" formaction="${pageContext.request.contextPath }/board/delete" class="btn btn-default">삭제</button>
 				<input type="hidden" value=${board.bno } name="bno">
 			</form>
 		</div>

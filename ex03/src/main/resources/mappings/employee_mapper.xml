@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yedam.app.employee.mapper.EmployeeMapper">
+
+	<select id="getList" resultType="employeeVO">
+		SELECT 
+		EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID
+		FROM EMPLOYEES
+		ORDER BY EMPLOYEE_ID
+	</select>
+	
+	<select id="search" resultType="employeeVO">
+		SELECT DISTINCT 
+		E.EMPLOYEE_ID, E.LAST_NAME 
+		FROM EMPLOYEES E 
+		JOIN EMPLOYEES M 
+		ON E.EMPLOYEE_ID = M.EMPLOYEE_ID 
+		ORDER BY E.EMPLOYEE_ID
+	</select>
+	
+	<select id="read" resultType="employeeVO">
+		SELECT
+		EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID
+		FROM EMPLOYEES
+		WHERE 
+			<choose>
+				<when test='email != null and email != ""'>
+					EMAIL = #{email}
+				</when>
+			</choose>
+		EMPLOYEE_ID = #{employee_id}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO EMPLOYEES 
+		(EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, JOB_ID, SALARY, COMMISSION_PCT, MANAGER_ID, DEPARTMENT_ID)
+		VALUES
+		(#{employee_id}, #{first_name}, #{last_name}, #{email}, #{phone_number}, #{hire_date}, #{job_id}, #{salary}, #{commission_pct}, #{manager_id}, #{department_id})
+	</insert>
+
+</mapper>
+	
